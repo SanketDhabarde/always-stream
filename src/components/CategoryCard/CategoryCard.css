@@ -1,0 +1,13 @@
+.category-card {
+  width: 22rem;
+}
+
+.card-img {
+  opacity: 0.7;
+}
+
+.card-text-overlay {
+  width: 100%;
+  text-align: center;
+  background-color: var(--image-grayout);
+}

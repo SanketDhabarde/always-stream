@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.menu {
+  display: none;
+}
+
+@media screen and (max-width: 37.5em) {
+  .menu {
+    display: block;
+  }
+
+  .header-brand > a {
+    font-size: 2rem;
+  }
+
+  .right-nav {
+    display: none;
+  }
+}
