@@ -1,0 +1,20 @@
+.home-hero-section {
+  background-image: linear-gradient(var(--image-grayout), var(--image-grayout)),
+    url("https://i.ytimg.com/vi/n61ULEU7CO0/hq720.jpg");
+  min-height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 100%;
+}
+
+.hero-disc {
+  max-width: 30rem;
+  flex-direction: column;
+}
+
+.home-categories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
