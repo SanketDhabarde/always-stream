@@ -1,4 +1,4 @@
-import { useState, useEffect, useReducer, useCallback } from "react";
+import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 
 const reducer = (state, action) => {
@@ -21,6 +21,8 @@ const reducer = (state, action) => {
         isError: true,
         isLoading: false,
       };
+    default:
+      return state;
   }
 };
 
@@ -32,18 +34,16 @@ export const useFetch = (initialUrl, initialData) => {
     isLoading: false,
   });
 
-  const fetchData = async () => {
-    dispatch({ type: "FETCH_INIT" });
-    try {
-      const res = await axios.get(url);
-      dispatch({ type: "FETCH_SUCCESS", payload: res.data });
-    } catch (e) {
-      dispatch({ type: "FETCH_ERROR" });
-    }
-  };
-
   useEffect(() => {
-    fetchData();
+    (async () => {
+      dispatch({ type: "FETCH_INIT" });
+      try {
+        const res = await axios.get(url);
+        dispatch({ type: "FETCH_SUCCESS", payload: res.data });
+      } catch (e) {
+        dispatch({ type: "FETCH_ERROR" });
+      }
+    })();
   }, [url]);
 
   return [state, setUrl];
