@@ -1,0 +1,14 @@
+.chip {
+  border: 1px solid var(--secondary-color);
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+}
+
+.chip.active {
+  background-color: var(--card-hover);
+  color: var(--primary-text);
+}
+
+.chip:hover {
+  background-color: var(--card-hover);
+}

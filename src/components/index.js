@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import Nav from "./Nav/Nav";
 import VideoCard from "./VideoCard/VideoCard";
 import Spinner from "./Spinner/Spinner";
+import Chips from "./Chips/Chips";
 
 export {
   Navbar,
@@ -16,4 +17,5 @@ export {
   Nav,
   VideoCard,
   Spinner,
+  Chips,
 };

@@ -14,7 +14,7 @@ function Home() {
       <div className="home-hero-section center-div">
         <section className="hero-disc center-div">
           <h1 className="text-center">Music to puts you in better mood</h1>
-          <Link to="/explore" className="btn btn-primary btn-link" onClick={() => setFilter("all")}>
+          <Link to="/explore" className="btn btn-primary btn-link" onClick={() => setFilter("All")}>
             Explore Music
           </Link>
         </section>
