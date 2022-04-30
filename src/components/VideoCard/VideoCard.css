@@ -1,0 +1,43 @@
+.video-card {
+  width: 18rem;
+  cursor: pointer;
+}
+
+.card-dismiss {
+  bottom: 35%;
+  top: auto;
+  background-color: var(--primary-color);
+  color: var(--primary-bg);
+}
+
+.card-dismiss:hover {
+  opacity: 1;
+}
+
+.card-header-title {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 13rem;
+  text-overflow: ellipsis;
+}
+
+.avatar-sm {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.card-disc {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1em;
+}
+
+.video-card-header:hover {
+  background-color: transparent;
+}
