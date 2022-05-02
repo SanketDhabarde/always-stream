@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./VideoCard.css";
 
-function VideoCard({ thumbnail, duration, views, title, creatorName, avatar }) {
+function VideoCard({ _id, thumbnail, duration, views, title, creatorName, avatar }) {
   return (
-    <div className="card video-card m-1">
+    <Link to={`/explore/${_id}`} className="card video-card m-1 btn-link">
       <div className="card-section">
         <img
           className="card-img img-responsive"
@@ -15,7 +16,7 @@ function VideoCard({ thumbnail, duration, views, title, creatorName, avatar }) {
         </span>
         <div className="card-header video-card-header card-body p-1">
           <div className="card-avatar">
-            <div className="avatar avatar-sm m-1">
+            <div className="avatar avatar-sm avatar-video-card m-1">
               <img
                 src={avatar}
                 alt="avatar"
@@ -32,7 +33,7 @@ function VideoCard({ thumbnail, duration, views, title, creatorName, avatar }) {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
 
