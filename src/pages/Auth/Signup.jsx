@@ -35,7 +35,7 @@ function Signup() {
       // saving the encodedToken in the localStorage
       localStorage.setItem("token", encodedToken);
       setUser(createdUser);
-      navigate("/");
+      navigate("/", { replace: true });
     } catch (error) {
       console.log(error);
       setError("Something went wrong😞");

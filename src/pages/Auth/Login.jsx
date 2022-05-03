@@ -23,7 +23,7 @@ function Login() {
       const { foundUser, encodedToken } = data;
       setUser(foundUser);
       localStorage.setItem("token", encodedToken);
-      navigate(location.state?.from?.pathname || "/");
+      navigate(location.state?.from?.pathname || "/", { replace: true });
     } catch (error) {
       console.error(error);
       setError("Username/password is wrong😞");
