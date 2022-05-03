@@ -7,6 +7,8 @@ import Nav from "./Nav/Nav";
 import VideoCard from "./VideoCard/VideoCard";
 import Spinner from "./Spinner/Spinner";
 import Chips from "./Chips/Chips";
+import Input from "./Input/Input";
+import RequiresAuth from "./RequiresAuth/RequiresAuth";
 
 export {
   Navbar,
@@ -18,4 +20,6 @@ export {
   VideoCard,
   Spinner,
   Chips,
+  Input,
+  RequiresAuth,
 };
