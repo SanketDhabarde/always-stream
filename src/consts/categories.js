@@ -9,16 +9,16 @@ export const CATEGORIES = [
   {
     _id: uuid(),
     img: "https://i.ytimg.com/vi/T9SkCIK0h2U/hq720.jpg",
-    category: "Bollywood songs",
+    category: "Bollywood",
   },
   {
     _id: uuid(),
     img: "https://i.ytimg.com/vi/woAHwpOLmyY/hq720.jpg",
-    category: "Anime songs",
+    category: "Anime",
   },
   {
     _id: uuid(),
-    img: "https://i.ytimg.com/vi/vbt_Lm2tXMY/hq720.jpg",
-    category: "90s songs",
+    img: "https://i.ytimg.com/vi/kJQP7kiw5Fk/hq720.jpg",
+    category: "Hollywood",
   },
 ];

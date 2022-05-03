@@ -1,0 +1,21 @@
+.explore {
+  display: flex;
+  justify-content: space-between;
+}
+
+.explore-videos {
+  width: 100%;
+}
+
+.explore-video-filters {
+  display: flex;
+  gap: 1em;
+}
+
+.explore-video-listing {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 80vh;
+  overflow-y: scroll;
+}
