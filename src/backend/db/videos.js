@@ -1,4 +1,3 @@
-import { v4 as uuid } from "uuid";
 /**
  * Videos Database can be added here.
  * You can add videos of your wish with different attributes
@@ -6,7 +5,7 @@ import { v4 as uuid } from "uuid";
 
 export const videos = [
   {
-    _id: uuid(),
+    _id: "mjtsgSNvGk4",
     alt: "lofi-video",
     views: "1.5M",
     duration: "19:01",
@@ -21,21 +20,21 @@ export const videos = [
       "Best Of Bollywood Hindi Lofi (Slowed X Reverb) Insta Viral Lo-Fi Mix Mashup-Insta reels Viral",
   },
   {
-    _id: uuid(),
+    _id: "CG_GH3e_vtk",
     alt: "lofi-video",
-    views: "7.2M",
-    duration: "55:27",
-    title: "4 A.M Study Session 📚 - [lofi hip hop/chill beats]",
-    thumbnail: "https://i.ytimg.com/vi/5mFTXbZzOAE/hq720.jpg",
-    creatorName: "Lofi Girl",
+    views: "14M",
+    duration: "2:59",
+    title: "Kabira - Tochi Raina, Rekha Bhardwaj [WORMONO Lofi Remake] Yeh Jawaani Hai Deewani | Bollywood Lofi",
+    thumbnail: "https://i.ytimg.com/vi/CG_GH3e_vtk/hq720.jpg",
+    creatorName: "WORMONO",
     avatar:
-      "https://yt3.ggpht.com/nTdLm-RoJp7vR65xckLJEXyBMDWyUBwyZquIjVo9wfVWANiZh_FUV_UkSH4ZB6d0N1teiqap=s88-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/ytc/AKedOLTEi8LzKtl3-oieeeRjYeCTZ4ZupzAloTP9GnOsbg=s88-c-k-c0x00ffffff-no-rj-mo",
     category: "lofi",
     description:
-      "This is a playlist to reaffirm your values, remind you how beautiful life is and help you come to peace with the world",
+      "Listen to 'Yeh Jawaani Hai Deewani - Kabira' Lofi Remake by WORMONO",
   },
   {
-    _id: uuid(),
+    _id: "AAD4qz-PAQE",
     alt: "bollywood-video",
     views: "66M",
     duration: "3:13",
@@ -50,7 +49,7 @@ export const videos = [
       "Song: Burj khalif Music Composer: Shashi - Dj Khushi Singer: Shashi - Dj Khushi Female vocals: Nikhita Gandhi Lyrics: Gagan Ahuja",
   },
   {
-    _id: uuid(),
+    _id: "1--qqQrimMA",
     alt: "bollywood-video",
     views: "450M",
     duration: "5:01",
@@ -65,7 +64,7 @@ export const videos = [
       "Gulshan Kumar & T-Series presents Bhushan Kumar's Dil Galti Kar Baitha Hai Song, This song is sung by Jubin Nautiyal, sufi vocals by Danish Sabri, music by Meet Bros; lyrics by Manoj Muntashir. The song features Jubin Nautiyal and Mouni Roy. The video is directed by Ashish Panda.",
   },
   {
-    _id: uuid(),
+    _id: "a2GujJZfXpg",
     alt: "anime-video",
     views: "139M",
     duration: "3:02",
@@ -79,7 +78,7 @@ export const videos = [
       "スパークル [original ver.] -Your name. Music Video edition- 予告編 from new album「人間開花」初回盤DVD.",
   },
   {
-    _id: uuid(),
+    _id: "zVgKnfN9i34",
     alt: "anime-video",
     views: "26M",
     duration: "1:40",
@@ -92,7 +91,7 @@ export const videos = [
     description: "Artist: KANA-BOON Song: Silhouette",
   },
   {
-    _id: uuid(),
+    _id: "5_iuNaULT5k",
     alt: "anime-video",
     views: "88M",
     duration: "4:08",
@@ -105,7 +104,7 @@ export const videos = [
     description: "Song: Hikaru Nara Artist: Goose House",
   },
   {
-    _id: uuid(),
+    _id: "AJtDXIazrMo",
     alt: "hollywood-video",
     views: "2.2B",
     duration: "4:10",
@@ -119,7 +118,7 @@ export const videos = [
       "The official music video for 'Love Me Like You Do', from Ellie`s album `Delirium`.",
   },
   {
-    _id: uuid(),
+    _id: "euCqAq6BRa4",
     alt: "hollywood-video",
     views: "1B",
     duration: "3:26",

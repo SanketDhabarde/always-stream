@@ -1,0 +1,48 @@
+.single-video-pg {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-video {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.single-video-view iframe {
+  width: 100%;
+  height: 65vh;
+  border-radius: 1rem;
+}
+
+.single-video-footer {
+  display: flex;
+  gap: 1em;
+}
+
+.avatar-single-video {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.3rem;
+}
+
+.single-video-features {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.video-features {
+  display: flex;
+  gap: 1.5em;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  gap: 0.5em;
+  cursor: pointer;
+}
