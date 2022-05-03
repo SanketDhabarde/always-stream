@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components";
-import { Explore, Home } from "./pages";
+import { Explore, Home, SingleVideo } from "./pages";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
+        <Route path="/explore/:videoId" element={<SingleVideo />} />
       </Routes>
     </div>
   );
