@@ -23,7 +23,7 @@ function Navbar() {
         </div>
         <div className="right-nav center-div">
           <Link
-            to="#"
+            to="/profile"
             className="badge-icon-wrapper center-div p-1 btn-link"
             title="User"
           >
