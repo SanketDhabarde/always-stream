@@ -16,13 +16,13 @@ function MobileNavbar({ setIsNavbarVisible }) {
           to="/profile"
           className="btn-link mobile-nav py-1 border-s my-1"
         >
-          <div className="nav-icon">
+          <div className="nav-icon px-2">
             <i className="far fa-user"></i>
           </div>
           <div className="nav-title">Profile</div>
         </NavLink>
         <NavLink to="/" className="btn-link mobile-nav py-1 border-s my-1">
-          <div className="nav-icon">
+          <div className="nav-icon px-2">
             <i className="fas fa-home"></i>
           </div>
           <div className="nav-title">Home</div>
@@ -31,10 +31,16 @@ function MobileNavbar({ setIsNavbarVisible }) {
           to="/explore"
           className="btn-link mobile-nav py-1 border-s my-1"
         >
-          <div className="nav-icon">
+          <div className="nav-icon px-2">
             <i className="fas fa-compass"></i>
           </div>
           <div className="nav-title">Explore</div>
+        </NavLink>
+        <NavLink to="/liked" className="btn-link mobile-nav py-1 border-s my-1">
+          <div className="nav-icon px-2">
+            <i className="fas fa-thumbs-up"></i>
+          </div>
+          <div className="nav-title">Liked videos</div>
         </NavLink>
       </nav>
     </div>

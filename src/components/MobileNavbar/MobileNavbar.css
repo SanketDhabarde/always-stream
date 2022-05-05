@@ -26,8 +26,6 @@
 
 .mobile-nav {
   display: flex;
-  gap: 1em;
-  justify-content: center;
   width: 100%;
 }
 
