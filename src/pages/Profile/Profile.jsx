@@ -1,17 +1,19 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context";
+import { useAuth, useUserLists } from "../../context";
 import { useTitle } from "../../hooks";
 import "./Profile.css";
 
 function Profile() {
   const { user, setUser } = useAuth();
   const navigate = useNavigate();
+  const { userListsDispatch } = useUserLists();
   useTitle("Profile");
 
   const logoutHandler = () => {
     localStorage.removeItem("token");
     setUser(null);
+    userListsDispatch({ type: "CLEAR_USER_LISTS" });
     navigate("/");
   };
 
@@ -27,7 +29,10 @@ function Profile() {
               </div>
               <h4 className="center-div">{`${user?.firstName} ${user?.lastName}`}</h4>
             </div>
-            <button className="btn btn-logout btn-primary" onClick={logoutHandler}>
+            <button
+              className="btn btn-logout btn-primary"
+              onClick={logoutHandler}
+            >
               Logout
             </button>
           </div>

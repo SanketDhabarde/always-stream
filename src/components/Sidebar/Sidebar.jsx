@@ -11,6 +11,11 @@ function Sidebar() {
         title="Explore"
         link="/explore"
       />
+      <Nav
+        icon={<i className="fas fa-thumbs-up"></i>}
+        title="Liked videos"
+        link="/liked"
+      />
     </div>
   );
 }
