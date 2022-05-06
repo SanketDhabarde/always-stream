@@ -4,7 +4,7 @@ import "./VideoCard.css";
 
 function VideoCard({ _id, thumbnail, duration, views, title, creatorName, avatar }) {
   return (
-    <Link to={`/explore/${_id}`} className="card video-card m-1 btn-link">
+    <Link to={`/video/${_id}`} className="card video-card m-1 btn-link">
       <div className="card-section">
         <img
           className="card-img img-responsive"

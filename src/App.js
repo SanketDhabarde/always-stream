@@ -1,7 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar, RequiresAuth } from "./components";
-import { Explore, Home, Login, Profile, Signup, SingleVideo } from "./pages";
+import {
+  Explore,
+  Home,
+  LikedVideos,
+  Login,
+  Profile,
+  Signup,
+  SingleVideo,
+} from "./pages";
 
 function App() {
   return (
@@ -10,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
-        <Route path="/explore/:videoId" element={<SingleVideo />} />
+        <Route path="/video/:videoId" element={<SingleVideo />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route
@@ -18,6 +26,14 @@ function App() {
           element={
             <RequiresAuth>
               <Profile />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/liked"
+          element={
+            <RequiresAuth>
+              <LikedVideos />
             </RequiresAuth>
           }
         />

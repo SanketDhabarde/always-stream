@@ -1,7 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Sidebar, Spinner } from "../../components";
+import { useAuth, useUserLists } from "../../context";
 import { useFetch, useTitle } from "../../hooks";
+import { dislikedVideo, likedVideo } from "../../services";
+import { isVideoExistsInList } from "../../utils";
 import "./SingleVideo.css";
 
 function SingleVideo() {
@@ -10,6 +13,24 @@ function SingleVideo() {
   const [{ data, isLoading, isError }] = useFetch(`/api/video/${videoId}`, []);
   const { video } = data;
   const { title, views, description, avatar, creatorName } = video ?? {};
+  const { user } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const { userListsState, userListsDispatch } = useUserLists();
+  const { liked } = userListsState;
+
+  const likeHandler = async () => {
+    if (user) {
+      if (isVideoExistsInList(liked, video?._id)) {
+        dislikedVideo(video, userListsDispatch);
+      } else {
+        likedVideo(video, userListsDispatch);
+      }
+    } else {
+      navigate("/login", { replace: true, state: { from: location } });
+    }
+  };
+
   return (
     <div className="single-video-pg">
       <Sidebar />
@@ -37,9 +58,18 @@ function SingleVideo() {
                 <div className="single-video-features py-2">
                   <small>{views} views</small>
                   <div className="video-features">
-                    <div className="feature center-div">
-                      <i className="far fa-thumbs-up"></i>
-                      <p>Like</p>
+                    <div className="feature center-div" onClick={likeHandler}>
+                      {isVideoExistsInList(liked, video?._id) ? (
+                        <i className="fas fa-thumbs-up"></i>
+                      ) : (
+                        <i className="far fa-thumbs-up"></i>
+                      )}
+
+                      <p>
+                        {isVideoExistsInList(liked, video?._id)
+                          ? `Liked`
+                          : `Like`}
+                      </p>
                     </div>
                     <div className="feature center-div">
                       <i className="far fa-save"></i>
