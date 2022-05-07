@@ -9,6 +9,7 @@ const UserListsProvider = ({ children }) => {
   const [userListsState, userListsDispatch] = useReducer(userListsReducer, {
     liked: [],
     watchlater: [],
+    history: [],
   });
 
   return (

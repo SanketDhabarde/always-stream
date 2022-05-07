@@ -25,7 +25,7 @@ function WatchLater() {
         ) : (
           <div className="watchLater-video-listing pt-2">
             {watchLater?.map((video) => (
-              <VideoCard key={video._id} {...video} />
+              <VideoCard key={video._id} video={video} />
             ))}
           </div>
         )}

@@ -24,7 +24,7 @@ function LikedVideos() {
         ) : (
           <div className="liked-video-listing pt-2">
             {liked?.map((video) => (
-              <VideoCard key={video._id} {...video} />
+              <VideoCard key={video._id} video={video} />
             ))}
           </div>
         )}

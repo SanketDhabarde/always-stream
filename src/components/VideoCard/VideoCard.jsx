@@ -1,10 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useAuth, useUserLists } from "../../context";
+import { addToHistory } from "../../services/history";
+import { isVideoExistsInList } from "../../utils";
 import "./VideoCard.css";
 
-function VideoCard({ _id, thumbnail, duration, views, title, creatorName, avatar }) {
+function VideoCard({ video }) {
+  const { _id, thumbnail, duration, views, title, creatorName, avatar } = video;
+  const { userListsState, userListsDispatch } = useUserLists();
+  const { history } = userListsState;
+  const { user } = useAuth();
+  const historyHandler = () => {
+    if (user && !isVideoExistsInList(history, _id)) {
+      addToHistory(video, userListsDispatch);
+    }
+  };
   return (
-    <Link to={`/video/${_id}`} className="card video-card m-1 btn-link">
+    <Link
+      to={`/video/${_id}`}
+      className="card video-card m-1 btn-link"
+      onClick={historyHandler}
+    >
       <div className="card-section">
         <img
           className="card-img img-responsive"
