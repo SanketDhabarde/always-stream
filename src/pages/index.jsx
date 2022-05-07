@@ -6,6 +6,7 @@ import Signup from "./Auth/Signup";
 import Profile from "./Profile/Profile";
 import LikedVideos from "./LikedVideos/LikedVideos";
 import WatchLater from "./WatchLater/WatchLater";
+import History from "./History/History";
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Profile,
   LikedVideos,
   WatchLater,
+  History,
 };

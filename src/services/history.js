@@ -23,7 +23,7 @@ const removeFromHistory = async (video, userListsDispatch) => {
   try {
     const {
       data: { history },
-    } = await axios.delete(`/api/user/history//${video?._id}`, {
+    } = await axios.delete(`/api/user/history/${video?._id}`, {
       headers: {
         authorization: localStorage.getItem("token"),
       },

@@ -51,6 +51,15 @@ function MobileNavbar({ setIsNavbarVisible }) {
           </div>
           <div className="nav-title">Watch later</div>
         </NavLink>
+        <NavLink
+          to="/history"
+          className="btn-link mobile-nav py-1 border-s my-1"
+        >
+          <div className="nav-icon px-2">
+            <i className="fas fa-history"></i>
+          </div>
+          <div className="nav-title">History</div>
+        </NavLink>
       </nav>
     </div>
   );

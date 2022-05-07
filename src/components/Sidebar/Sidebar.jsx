@@ -21,6 +21,11 @@ function Sidebar() {
         title="Watch later"
         link="/watch-later"
       />
+      <Nav
+        icon={<i className="fas fa-history"></i>}
+        title="History"
+        link="/history"
+      />
     </div>
   );
 }

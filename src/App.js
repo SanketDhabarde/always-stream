@@ -3,6 +3,7 @@ import "./App.css";
 import { Navbar, RequiresAuth } from "./components";
 import {
   Explore,
+  History,
   Home,
   LikedVideos,
   Login,
@@ -43,6 +44,14 @@ function App() {
           element={
             <RequiresAuth>
               <WatchLater />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/history"
+          element={
+            <RequiresAuth>
+              <History />
             </RequiresAuth>
           }
         />
