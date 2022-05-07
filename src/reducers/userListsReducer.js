@@ -1,6 +1,6 @@
 const initialState = {
   liked: [],
-  watchlater: [],
+  watchLater: [],
 };
 
 export const userListsReducer = (state = initialState, action) => {
@@ -11,12 +11,17 @@ export const userListsReducer = (state = initialState, action) => {
       return {
         ...state,
         liked: [...likes],
-        watchlater: [...watchlater],
+        watchLater: [...watchlater],
       };
     case "UPDATE_LIKED":
       return {
         ...state,
         liked: [...payload],
+      };
+    case "UPDATE_WATCH_LATER":
+      return {
+        ...state,
+        watchLater: [...payload],
       };
     case "CLEAR_USER_LISTS":
       return {
