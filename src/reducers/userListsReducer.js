@@ -1,14 +1,17 @@
 const initialState = {
   liked: [],
+  watchlater: [],
 };
 
 export const userListsReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case "INIT_LIKED":
+    case "INIT_USER_LIST":
+      const { likes, watchlater } = payload;
       return {
         ...state,
-        liked: payload,
+        liked: [...likes],
+        watchlater: [...watchlater],
       };
     case "UPDATE_LIKED":
       return {

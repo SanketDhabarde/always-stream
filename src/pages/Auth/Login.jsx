@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Input } from "../../components";
+import { useUserLists } from "../../context";
 import { useAuth } from "../../context/auth";
 import { useTitle } from "../../hooks";
 import "./Auth.css";
@@ -14,6 +15,7 @@ function Login() {
   const { setUser } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const { userListsDispatch } = useUserLists();
   useTitle("Login");
 
   const loginHandler = async (e) => {
@@ -22,6 +24,7 @@ function Login() {
       const { data } = await axios.post("/api/auth/login", { email, password });
       const { foundUser, encodedToken } = data;
       setUser(foundUser);
+      userListsDispatch({ type: "INIT_USER_LIST", payload: foundUser });
       localStorage.setItem("token", encodedToken);
       navigate(location.state?.from?.pathname || "/", { replace: true });
     } catch (error) {
@@ -79,13 +82,14 @@ function Login() {
                 <button type="submit" className="btn btn-primary">
                   Submit
                 </button>
+                <button
+                  type="submit"
+                  className="btn btn-dummy-user btn-secondary"
+                  onClick={setDummyUserHandler}
+                >
+                  Login with dummy user
+                </button>
               </form>
-              <button
-                className="btn btn-dummy-user btn-secondary"
-                onClick={setDummyUserHandler}
-              >
-                Login with dummy user
-              </button>
               <Link to="/signup" className="btn-link center-div">
                 Create new account <i className="fas fa-arrow-right px-1"></i>
               </Link>
