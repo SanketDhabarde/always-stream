@@ -1,0 +1,32 @@
+.watchLater {
+  display: flex;
+  justify-content: space-between;
+}
+
+.watchLater-videos {
+  width: 100%;
+}
+
+.watchLater-video-filters {
+  display: flex;
+  gap: 1em;
+}
+
+.watchLater-video-listing {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 85vh;
+  overflow-y: scroll;
+}
+
+.btn-underline {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 37.5em) {
+  .watchLater-video-listing {
+    height: 100%;
+    justify-content: center;
+  }
+}

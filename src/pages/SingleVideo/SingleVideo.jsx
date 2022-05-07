@@ -47,7 +47,6 @@ function SingleVideo() {
       navigate("/login", { replace: true, state: { from: location } });
     }
   };
-  console.log(watchLater);
 
   return (
     <div className="single-video-pg">

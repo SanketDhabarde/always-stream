@@ -27,6 +27,7 @@ export const userListsReducer = (state = initialState, action) => {
       return {
         ...state,
         liked: [],
+        watchlater: [],
       };
     default:
       return state;
