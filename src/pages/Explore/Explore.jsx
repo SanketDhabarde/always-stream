@@ -25,7 +25,7 @@ function Explore() {
         <hr className="separator"/>
         <div className="explore-video-listing pt-2">
           {filteredVideos?.map((video) => (
-            <VideoCard key={video._id} {...video} />
+            <VideoCard key={video._id} video={video}/>
           ))}
           {isError && <div>Something went wrong😥</div>}
           {isLoading && <Spinner />}

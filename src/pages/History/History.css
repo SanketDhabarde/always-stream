@@ -1,0 +1,39 @@
+.history {
+  display: flex;
+  justify-content: space-between;
+}
+
+.history-videos {
+  width: 100%;
+}
+
+.history-videos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 1em;
+}
+
+.btn-clear-history {
+  margin: 0;
+}
+
+.history-video-listing {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.btn-underline {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 37.5em) {
+  .history-video-listing {
+    height: 100%;
+    justify-content: center;
+  }
+}

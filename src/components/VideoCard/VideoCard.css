@@ -10,6 +10,21 @@
   color: var(--primary-bg);
 }
 
+.delete-from-history {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background-color: var(--primary-text);
+  color: var(--primary-bg);
+  width: 2rem;
+  height: 2rem;
+  visibility: hidden;
+}
+
+.video-card:hover .delete-from-history {
+  visibility: visible;
+}
+
 .card-dismiss:hover {
   opacity: 1;
 }
