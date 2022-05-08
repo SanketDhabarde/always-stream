@@ -49,6 +49,14 @@ function SingleVideo() {
     }
   };
 
+  const showPlaylistModalHandler = () => {
+    if (user) {
+      setIsModalVisible();
+    } else {
+      navigate("/login", { replace: true, state: { from: location } });
+    }
+  };
+
   return (
     <div className="single-video-pg">
       <Sidebar />
@@ -91,7 +99,7 @@ function SingleVideo() {
                     </div>
                     <div
                       className="feature center-div"
-                      onClick={setIsModalVisible}
+                      onClick={showPlaylistModalHandler}
                     >
                       <i className="far fa-save"></i>
                       <p>Save to playlist</p>
@@ -129,7 +137,9 @@ function SingleVideo() {
           )}
         </div>
       </div>
-      {isModalVisible && <PlaylistModal setIsModalVisible={setIsModalVisible}/>}
+      {isModalVisible && (
+        <PlaylistModal setIsModalVisible={setIsModalVisible} video={video}/>
+      )}
     </div>
   );
 }

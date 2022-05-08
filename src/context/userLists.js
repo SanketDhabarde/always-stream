@@ -10,6 +10,7 @@ const UserListsProvider = ({ children }) => {
     liked: [],
     watchlater: [],
     history: [],
+    playlists: [],
   });
 
   return (
