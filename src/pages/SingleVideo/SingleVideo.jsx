@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Sidebar, Spinner } from "../../components";
+import { PlaylistModal, Sidebar, Spinner } from "../../components";
 import { useAuth, useUserLists } from "../../context";
-import { useFetch, useTitle } from "../../hooks";
+import { useFetch, useTitle, useToggle } from "../../hooks";
 import {
   addToWatchLater,
   dislikedVideo,
@@ -23,6 +23,7 @@ function SingleVideo() {
   const location = useLocation();
   const { userListsState, userListsDispatch } = useUserLists();
   const { liked, watchLater } = userListsState;
+  const [isModalVisible, setIsModalVisible] = useToggle();
 
   const likeHandler = () => {
     if (user) {
@@ -88,7 +89,10 @@ function SingleVideo() {
                           : `Like`}
                       </p>
                     </div>
-                    <div className="feature center-div">
+                    <div
+                      className="feature center-div"
+                      onClick={setIsModalVisible}
+                    >
                       <i className="far fa-save"></i>
                       <p>Save to playlist</p>
                     </div>
@@ -125,6 +129,7 @@ function SingleVideo() {
           )}
         </div>
       </div>
+      {isModalVisible && <PlaylistModal setIsModalVisible={setIsModalVisible}/>}
     </div>
   );
 }

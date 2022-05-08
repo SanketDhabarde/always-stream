@@ -9,6 +9,7 @@ import Spinner from "./Spinner/Spinner";
 import Chips from "./Chips/Chips";
 import Input from "./Input/Input";
 import RequiresAuth from "./RequiresAuth/RequiresAuth";
+import PlaylistModal from "./PlaylistModal/PlaylistModal";
 
 export {
   Navbar,
@@ -22,4 +23,5 @@ export {
   Chips,
   Input,
   RequiresAuth,
+  PlaylistModal,
 };
