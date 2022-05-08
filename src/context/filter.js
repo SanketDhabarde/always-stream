@@ -5,7 +5,7 @@ const FilterContext = createContext();
 const useFilter = () => useContext(FilterContext);
 
 const FilterProvider = ({ children }) => {
-  const [filter, setFilter] = useState("all");
+  const [filter, setFilter] = useState("All");
 
   return (
     <FilterContext.Provider value={{ filter, setFilter }}>

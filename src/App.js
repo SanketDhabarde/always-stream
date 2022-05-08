@@ -9,6 +9,7 @@ import {
   Profile,
   Signup,
   SingleVideo,
+  WatchLater,
 } from "./pages";
 
 function App() {
@@ -34,6 +35,14 @@ function App() {
           element={
             <RequiresAuth>
               <LikedVideos />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/watch-later"
+          element={
+            <RequiresAuth>
+              <WatchLater />
             </RequiresAuth>
           }
         />

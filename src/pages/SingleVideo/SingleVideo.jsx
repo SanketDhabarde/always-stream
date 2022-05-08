@@ -3,7 +3,12 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { Sidebar, Spinner } from "../../components";
 import { useAuth, useUserLists } from "../../context";
 import { useFetch, useTitle } from "../../hooks";
-import { dislikedVideo, likedVideo } from "../../services";
+import {
+  addToWatchLater,
+  dislikedVideo,
+  likedVideo,
+  removeFromWatchLater,
+} from "../../services";
 import { isVideoExistsInList } from "../../utils";
 import "./SingleVideo.css";
 
@@ -17,14 +22,26 @@ function SingleVideo() {
   const navigate = useNavigate();
   const location = useLocation();
   const { userListsState, userListsDispatch } = useUserLists();
-  const { liked } = userListsState;
+  const { liked, watchLater } = userListsState;
 
-  const likeHandler = async () => {
+  const likeHandler = () => {
     if (user) {
       if (isVideoExistsInList(liked, video?._id)) {
         dislikedVideo(video, userListsDispatch);
       } else {
         likedVideo(video, userListsDispatch);
+      }
+    } else {
+      navigate("/login", { replace: true, state: { from: location } });
+    }
+  };
+
+  const watchLaterHandler = () => {
+    if (user) {
+      if (isVideoExistsInList(watchLater, video?._id)) {
+        removeFromWatchLater(video, userListsDispatch);
+      } else {
+        addToWatchLater(video, userListsDispatch);
       }
     } else {
       navigate("/login", { replace: true, state: { from: location } });
@@ -75,8 +92,16 @@ function SingleVideo() {
                       <i className="far fa-save"></i>
                       <p>Save to playlist</p>
                     </div>
-                    <div className="feature center-div">
-                      <i className="far fa-clock"></i>
+                    <div
+                      className="feature center-div"
+                      onClick={watchLaterHandler}
+                    >
+                      {isVideoExistsInList(watchLater, video?._id) ? (
+                        <i className="fas fa-clock"></i>
+                      ) : (
+                        <i className="far fa-clock"></i>
+                      )}
+
                       <p>Watch later</p>
                     </div>
                   </div>
