@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Sidebar, VideoCard } from "../../components";
-import { useAuth, useUserLists } from "../../context";
+import { useUserLists } from "../../context";
 import { useTitle } from "../../hooks";
 import { clearHistory } from "../../services";
 import "./History.css";
