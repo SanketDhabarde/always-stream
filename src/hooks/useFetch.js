@@ -50,7 +50,7 @@ export const useFetch = (initialUrl, initialData, isRoutePrivate = false) => {
         dispatch({ type: "FETCH_ERROR" });
       }
     })();
-  }, [url]);
+  }, [url, isRoutePrivate]);
 
   return [state, setUrl];
 };
