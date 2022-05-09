@@ -1,0 +1,32 @@
+.playlists-listing {
+  display: flex;
+  justify-content: space-between;
+}
+
+.playlists-videos {
+  width: 100%;
+}
+
+.playlists-video-filters {
+  display: flex;
+  gap: 1em;
+}
+
+.playlists-video-listing {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-height: 85vh;
+  overflow-y: scroll;
+}
+
+.btn-underline {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 37.5em) {
+  .playlists-video-listing {
+    height: 100%;
+    justify-content: center;
+  }
+}

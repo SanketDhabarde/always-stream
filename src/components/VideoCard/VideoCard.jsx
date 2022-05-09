@@ -1,11 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth, useUserLists } from "../../context";
-import { addToHistory, removeFromHistory } from "../../services";
+import {
+  addToHistory,
+  removeFromHistory,
+  removeVideoFromPlaylist,
+} from "../../services";
 import { isVideoExistsInList } from "../../utils";
 import "./VideoCard.css";
 
-function VideoCard({ video, deleteFromHistory = false }) {
+function VideoCard({ video, deleteFromHistory = false, playlistId }) {
   const { _id, thumbnail, duration, views, title, creatorName, avatar } = video;
   const { userListsState, userListsDispatch } = useUserLists();
   const { history } = userListsState;
@@ -17,11 +21,15 @@ function VideoCard({ video, deleteFromHistory = false }) {
     }
   };
 
-  const removeFromHistoryHandler = (e) => {
+  const deleteHandler = (e) => {
     e.preventDefault();
     e.stopPropagation();
     if (user) {
-      removeFromHistory(video, userListsDispatch);
+      if (deleteFromHistory) {
+        removeFromHistory(video, userListsDispatch);
+      } else if (playlistId) {
+        removeVideoFromPlaylist(playlistId, _id, userListsDispatch);
+      }
     }
   };
 
@@ -40,11 +48,11 @@ function VideoCard({ video, deleteFromHistory = false }) {
         <span className="card-dismiss px-1 border-s center-div">
           <small>{duration}</small>
         </span>
-        {deleteFromHistory && (
+        {(deleteFromHistory || playlistId) && (
           <span
             className="delete-from-history px-1 border-s center-div"
             title="Remove"
-            onClick={(e) => removeFromHistoryHandler(e)}
+            onClick={(e) => deleteHandler(e)}
           >
             <i className="fas fa-trash-alt"></i>
           </span>

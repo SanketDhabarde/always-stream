@@ -21,6 +21,21 @@ const addNewPlaylist = async (newPlaylist, userListsDispatch) => {
   }
 };
 
+const removePlaylist = async (playlistId, userListsDispatch) => {
+  try {
+    const {
+      data: { playlists },
+    } = await axios.delete(`/api/user/playlists/${playlistId}`, {
+      headers: {
+        authorization: localStorage.getItem("token"),
+      },
+    });
+    userListsDispatch({ type: "UPDATE_PLAYLISTS", payload: playlists });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
 const addVideoInPlaylist = async (playlistId, video, userListsDispatch) => {
   try {
     const {
@@ -59,4 +74,9 @@ const removeVideoFromPlaylist = async (
   }
 };
 
-export { addNewPlaylist, addVideoInPlaylist, removeVideoFromPlaylist };
+export {
+  addNewPlaylist,
+  removePlaylist,
+  addVideoInPlaylist,
+  removeVideoFromPlaylist,
+};

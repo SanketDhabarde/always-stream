@@ -7,6 +7,8 @@ import Profile from "./Profile/Profile";
 import LikedVideos from "./LikedVideos/LikedVideos";
 import WatchLater from "./WatchLater/WatchLater";
 import History from "./History/History";
+import Playlists from "./Playlists/Playlists";
+import PlaylistVideos from "./PlaylistVideos/PlaylistVideos";
 
 export {
   Home,
@@ -18,4 +20,6 @@ export {
   LikedVideos,
   WatchLater,
   History,
+  Playlists,
+  PlaylistVideos,
 };

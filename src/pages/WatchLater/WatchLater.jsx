@@ -6,7 +6,7 @@ import { useTitle } from "../../hooks";
 import "./WatchLater.css";
 
 function WatchLater() {
-  useTitle("watch later videos");
+  useTitle("Watch later videos");
   const { userListsState } = useUserLists();
   const { watchLater } = userListsState;
 

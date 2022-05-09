@@ -43,6 +43,15 @@ function MobileNavbar({ setIsNavbarVisible }) {
           <div className="nav-title">Liked videos</div>
         </NavLink>
         <NavLink
+          to="/playlists"
+          className="btn-link mobile-nav py-1 border-s my-1"
+        >
+          <div className="nav-icon px-2">
+            <i className="fas fa-bars"></i>
+          </div>
+          <div className="nav-title">Playlists</div>
+        </NavLink>
+        <NavLink
           to="/watch-later"
           className="btn-link mobile-nav py-1 border-s my-1"
         >

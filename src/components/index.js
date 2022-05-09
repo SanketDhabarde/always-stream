@@ -10,6 +10,7 @@ import Chips from "./Chips/Chips";
 import Input from "./Input/Input";
 import RequiresAuth from "./RequiresAuth/RequiresAuth";
 import PlaylistModal from "./PlaylistModal/PlaylistModal";
+import PlaylistCard from "./PlaylistCard/PlaylistCard";
 
 export {
   Navbar,
@@ -24,4 +25,5 @@ export {
   Input,
   RequiresAuth,
   PlaylistModal,
+  PlaylistCard,
 };

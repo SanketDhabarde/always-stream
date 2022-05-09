@@ -17,6 +17,11 @@ function Sidebar() {
         link="/liked"
       />
       <Nav
+        icon={<i className="fas fa-bars"></i>}
+        title="Playlists"
+        link="/playlists"
+      />
+      <Nav
         icon={<i className="fas fa-clock"></i>}
         title="Watch later"
         link="/watch-later"
