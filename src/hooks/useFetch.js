@@ -26,7 +26,7 @@ const reducer = (state, action) => {
   }
 };
 
-export const useFetch = (initialUrl, initialData) => {
+export const useFetch = (initialUrl, initialData, isRoutePrivate = false) => {
   const [url, setUrl] = useState(initialUrl);
   const [state, dispatch] = useReducer(reducer, {
     data: initialData,
@@ -38,13 +38,19 @@ export const useFetch = (initialUrl, initialData) => {
     (async () => {
       dispatch({ type: "FETCH_INIT" });
       try {
-        const res = await axios.get(url);
+        const res = isRoutePrivate
+          ? await axios.get(url, {
+              headers: {
+                authorization: localStorage.getItem("token"),
+              },
+            })
+          : await axios.get(url);
         dispatch({ type: "FETCH_SUCCESS", payload: res.data });
       } catch (e) {
         dispatch({ type: "FETCH_ERROR" });
       }
     })();
-  }, [url]);
+  }, [url, isRoutePrivate]);
 
   return [state, setUrl];
 };

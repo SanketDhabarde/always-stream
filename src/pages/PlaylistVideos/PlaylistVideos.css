@@ -1,0 +1,39 @@
+.single-playlist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.single-playlist-videos {
+  width: 100%;
+}
+
+.single-playlist-videos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: wrap;
+  gap: 1em;
+}
+
+.btn-clear-single-playlist {
+  margin: 0;
+}
+
+.single-playlist-video-listing {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.btn-underline {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 37.5em) {
+  .single-playlist-video-listing {
+    height: 100%;
+    justify-content: center;
+  }
+}

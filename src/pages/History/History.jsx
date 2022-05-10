@@ -14,7 +14,7 @@ function History() {
     <div className="history">
       <Sidebar />
       <div className="history-videos">
-        <div className="history-videos-header p-1">
+        <div className="history-videos-header p-2">
           <h2>History</h2>
           <div className="clear-history">
             {!!history.length && (

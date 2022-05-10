@@ -22,8 +22,8 @@ function Signup() {
   const navigate = useNavigate();
   useTitle("Signup");
 
-  const signupHandler = async (e) => {
-    e.preventDefault();
+  const signupHandler = async (event) => {
+    event.preventDefault();
     try {
       const { data } = await axios.post(`/api/auth/signup`, {
         email,
@@ -57,8 +57,8 @@ function Signup() {
                     class_name="input-textbox p-1"
                     placeholder="Enter email"
                     value={email}
-                    changeHandler={(e) =>
-                      dispatch({ type: "SET_EMAIL", payload: e.target.value })
+                    changeHandler={(event) =>
+                      dispatch({ type: "SET_EMAIL", payload: event.target.value })
                     }
                     required={true}
                   />
@@ -70,10 +70,10 @@ function Signup() {
                     class_name="input-textbox p-1"
                     placeholder="Enter first name"
                     value={firstName}
-                    changeHandler={(e) =>
+                    changeHandler={(event) =>
                       dispatch({
                         type: "SET_FIRST_NAME",
-                        payload: e.target.value,
+                        payload: event.target.value,
                       })
                     }
                     required={true}
@@ -86,10 +86,10 @@ function Signup() {
                     class_name="input-textbox p-1"
                     placeholder="Enter last name"
                     value={lastName}
-                    changeHandler={(e) =>
+                    changeHandler={(event) =>
                       dispatch({
                         type: "SET_LAST_NAME",
-                        payload: e.target.value,
+                        payload: event.target.value,
                       })
                     }
                     required={true}
@@ -102,10 +102,10 @@ function Signup() {
                     class_name="input-textbox p-1"
                     placeholder="Password"
                     value={password}
-                    changeHandler={(e) =>
+                    changeHandler={(event) =>
                       dispatch({
                         type: "SET_PASSWORD",
-                        payload: e.target.value,
+                        payload: event.target.value,
                       })
                     }
                     required={true}
@@ -128,10 +128,10 @@ function Signup() {
                     class_name="input-textbox p-1"
                     placeholder="Password"
                     value={confirmPassword}
-                    changeHandler={(e) =>
+                    changeHandler={(event) =>
                       dispatch({
                         type: "SET_CONFIRM_PASSWORD",
-                        payload: e.target.value,
+                        payload: event.target.value,
                       })
                     }
                     required={true}

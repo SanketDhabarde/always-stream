@@ -18,8 +18,8 @@ function Login() {
   const { userListsDispatch } = useUserLists();
   useTitle("Login");
 
-  const loginHandler = async (e) => {
-    e.preventDefault();
+  const loginHandler = async (event) => {
+    event.preventDefault();
     try {
       const { data } = await axios.post("/api/auth/login", { email, password });
       const { foundUser, encodedToken } = data;
@@ -53,7 +53,7 @@ function Login() {
                     class_name="input-textbox p-1"
                     placeholder="Enter email"
                     value={email}
-                    changeHandler={(e) => setEmail(e.target.value)}
+                    changeHandler={(event) => setEmail(event.target.value)}
                     required={true}
                   />
                 </div>
@@ -64,7 +64,7 @@ function Login() {
                     class_name="input-textbox p-1"
                     placeholder="Password"
                     value={password}
-                    changeHandler={(e) => setPassword(e.target.value)}
+                    changeHandler={(event) => setPassword(event.target.value)}
                     required={true}
                   />
                   <span

@@ -7,6 +7,8 @@ import {
   Home,
   LikedVideos,
   Login,
+  Playlists,
+  PlaylistVideos,
   Profile,
   Signup,
   SingleVideo,
@@ -36,6 +38,22 @@ function App() {
           element={
             <RequiresAuth>
               <LikedVideos />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/playlists"
+          element={
+            <RequiresAuth>
+              <Playlists />
+            </RequiresAuth>
+          }
+        />
+        <Route
+          path="/playlist/:id"
+          element={
+            <RequiresAuth>
+              <PlaylistVideos />
             </RequiresAuth>
           }
         />
