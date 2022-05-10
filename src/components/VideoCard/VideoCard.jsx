@@ -21,9 +21,9 @@ function VideoCard({ video, deleteFromHistory = false, playlistId }) {
     }
   };
 
-  const deleteHandler = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+  const deleteHandler = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (user) {
       if (deleteFromHistory) {
         removeFromHistory(video, userListsDispatch);
@@ -52,7 +52,7 @@ function VideoCard({ video, deleteFromHistory = false, playlistId }) {
           <span
             className="delete-from-history px-1 border-s center-div"
             title="Remove"
-            onClick={(e) => deleteHandler(e)}
+            onClick={(event) => deleteHandler(event)}
           >
             <i className="fas fa-trash-alt"></i>
           </span>

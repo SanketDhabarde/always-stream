@@ -33,7 +33,7 @@ function PlaylistModal({ setIsModalVisible, video }) {
 
   return (
     <div className="backdrop" onClick={setIsModalVisible}>
-      <div className="playlist-modal" onClick={(e) => e.stopPropagation()}>
+      <div className="playlist-modal" onClick={(event) => event.stopPropagation()}>
         <div className="playlist-header p-2">
           <h4>Save to...</h4>
           <div className="close-icon center-div" onClick={setIsModalVisible}>
@@ -68,7 +68,7 @@ function PlaylistModal({ setIsModalVisible, video }) {
                 autoFocus
                 value={newPlaylist}
                 required
-                onChange={(e) => setNewPlaylist(e.target.value)}
+                onChange={(event) => setNewPlaylist(event.target.value)}
               />
               <button type="submit" className="btn-create">
                 CREATE
