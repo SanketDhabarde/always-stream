@@ -9,6 +9,7 @@ import WatchLater from "./WatchLater/WatchLater";
 import History from "./History/History";
 import Playlists from "./Playlists/Playlists";
 import PlaylistVideos from "./PlaylistVideos/PlaylistVideos";
+import NotFound from "./NotFound/NotFound";
 
 export {
   Home,
@@ -22,4 +23,5 @@ export {
   History,
   Playlists,
   PlaylistVideos,
+  NotFound,
 };

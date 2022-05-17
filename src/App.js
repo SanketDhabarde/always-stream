@@ -7,6 +7,7 @@ import {
   Home,
   LikedVideos,
   Login,
+  NotFound,
   Playlists,
   PlaylistVideos,
   Profile,
@@ -73,6 +74,7 @@ function App() {
             </RequiresAuth>
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
