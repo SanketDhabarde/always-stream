@@ -1,11 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useSearch } from "../../context";
 import { useToggle } from "../../hooks";
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "./Navbar.css";
 
 function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useToggle();
+  const { pathname } = useLocation();
+  const { searchBy, setSearchBy } = useSearch();
 
   return (
     <>
@@ -21,6 +24,18 @@ function Navbar() {
             </Link>
           </div>
         </div>
+        {pathname === "/explore" && (
+          <div className="search">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="input-textbox p-1"
+              value={searchBy}
+              onChange={(event) => setSearchBy(event.target.value)}
+            />
+          </div>
+        )}
+
         <div className="right-nav center-div">
           <Link
             to="/profile"

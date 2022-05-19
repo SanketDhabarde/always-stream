@@ -21,6 +21,26 @@
     font-size: 2rem;
   }
 
+  .navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin: 1rem 0;
+  }
+
+  .search,
+  .search > .input-textbox {
+    width: 100%;
+  }
+
+  .input-textbox {
+    margin-bottom: 1rem;
+  }
+
+  header {
+    height: auto;
+  }
+
   .right-nav {
     display: none;
   }
