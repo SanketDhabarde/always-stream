@@ -23,6 +23,7 @@ https://user-images.githubusercontent.com/40385118/168830098-ff8918c2-defc-46a0-
 
 ## 😎 Features
 - Exlore the videos with category
+- Search the videos on explore page
 - Single video page to play the video
 - Like the video
 - Add video to watch later
