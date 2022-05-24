@@ -22,6 +22,11 @@
   overflow-y: scroll;
 }
 
+.error-msg{
+  width: 100%;
+  text-align: center;
+}
+
 @media screen and (max-width: 37.5em) {
   .explore-video-listing {
     height: 100%;
