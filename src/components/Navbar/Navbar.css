@@ -38,6 +38,7 @@
   .search,
   .search > .input-textbox {
     width: 100%;
+    height: auto;
   }
 
   .input-textbox {
