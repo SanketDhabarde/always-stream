@@ -11,7 +11,7 @@ function MobileNavbar({ setIsNavbarVisible }) {
       >
         <i className="fas fa-times"></i>
       </div>
-      <nav className="mobile-navs p-2">
+      <nav className="mobile-navs p-2" onClick={() => setIsNavbarVisible()}>
         <NavLink
           to="/profile"
           className="btn-link mobile-nav py-1 border-s my-1"
