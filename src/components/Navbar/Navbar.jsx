@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useSearch } from "../../context";
+import { useAuth, useSearch } from "../../context";
 import { useToggle } from "../../hooks";
 import MobileNavbar from "../MobileNavbar/MobileNavbar";
 import "./Navbar.css";
@@ -9,6 +9,7 @@ function Navbar() {
   const [isNavbarVisible, setIsNavbarVisible] = useToggle();
   const { pathname } = useLocation();
   const { searchBy, setSearchBy } = useSearch();
+  const { user } = useAuth();
 
   return (
     <>
@@ -36,13 +37,21 @@ function Navbar() {
           </div>
         )}
 
-        <div className="right-nav center-div">
+        <div className="right-nav center-div px-1">
           <Link
             to="/profile"
             className="badge-icon-wrapper center-div p-1 btn-link"
             title="User"
           >
-            <i className="far fa-user"></i>
+            <div className="user text-center">
+              <i className="far fa-user"></i>
+              <p
+                className="user-name"
+                title={user ? `Hi ${user.firstName}` : `Profile`}
+              >
+                {user ? `Hi ${user.firstName}` : `Profile`}
+              </p>
+            </div>
           </Link>
         </div>
       </header>

@@ -58,7 +58,7 @@ export const videos = [
     thumbnail: "https://i.ytimg.com/vi/1--qqQrimMA/hq720.jpg",
     creatorName: "T-series",
     avatar:
-      "https://yt3.ggpht.com/DzaZaTX6gdgjjPI_vkNc2dPbI794UroI9fTAunua0fa7lukDj5NDkjfhS5-w2KXuvXS02r92=s88-c-k-c0x00ffffff-no-rj",
+      "https://yt3.ggpht.com/hTPDN-Yr7vQCEJ-YxDyH6OiSAMUcPd0gW40Dxy4299GFFBPh3lumCXIZhMQnOVGV6n3a1GL4BQ=s48-c-k-c0x00ffffff-no-rj",
     category: "bollywood",
     description:
       "Gulshan Kumar & T-Series presents Bhushan Kumar's Dil Galti Kar Baitha Hai Song, This song is sung by Jubin Nautiyal, sufi vocals by Danish Sabri, music by Meet Bros; lyrics by Manoj Muntashir. The song features Jubin Nautiyal and Mouni Roy. The video is directed by Ashish Panda.",

@@ -12,6 +12,13 @@
   display: none;
 }
 
+.user-name {
+  white-space: nowrap;
+  width: 5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @media screen and (max-width: 37.5em) {
   .menu {
     display: block;
@@ -31,6 +38,7 @@
   .search,
   .search > .input-textbox {
     width: 100%;
+    height: auto;
   }
 
   .input-textbox {

@@ -14,13 +14,11 @@ function Explore() {
   const { searchBy } = useSearch();
   const filteredVideos = filterVideos(videos, filter);
   const debounceValue = useDebounce(searchBy, 500);
-  let searchedVideos = [];
+  let searchedVideos = searchVideos(filteredVideos, debounceValue);
   if (debounceValue) {
     searchedVideos = searchVideos(filteredVideos, debounceValue);
   }
 
-  const finalFilteredVideos =
-    searchedVideos.length > 0 ? searchedVideos : filteredVideos;
   return (
     <div className="explore">
       <Sidebar />
@@ -33,11 +31,12 @@ function Explore() {
         </div>
         <hr className="separator" />
         <div className="explore-video-listing pt-2">
-          {finalFilteredVideos?.map((video) => (
+          {searchedVideos?.map((video) => (
             <VideoCard key={video._id} video={video} />
           ))}
-          {isError && <div>Something went wrong😥</div>}
+          {isError && <div className="error-msg">Something went wrong😥</div>}
           {isLoading && <Spinner />}
+          {searchBy && !searchedVideos.length && <div className="error-msg">No videos present as per search😥</div>}
         </div>
       </div>
     </div>
