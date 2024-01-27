@@ -15,7 +15,7 @@ https://user-images.githubusercontent.com/40385118/168830098-ff8918c2-defc-46a0-
 ## 🛠 Technologies used
 - ReactJS
 - [Always-UI](https://always-ui.netlify.app/) component library
-- [Mockbee](https://mockbee.netlify.app/) for backend
+- [Always-stream-backend](https://github.com/SanketDhabarde/always-stream-backend) Express Js backend
 - React Router
 
 ## ⏯ Live link
@@ -41,11 +41,7 @@ git clone https://github.com/SanketDhabarde/always-stream.git
 ```
 npm install
 ```
-### 3. Create .env file and add secret key. this will help you use `MockBee` APIs
-```
-REACT_APP_JWT_SECRET=<your-jwt-secret-of-your-choice>
-```
-### 4. Run the app
+### 3. Run the app
 ```
 npm start
 ```
