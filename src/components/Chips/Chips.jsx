@@ -7,7 +7,9 @@ function Chips({ title }) {
   return (
     <div
       onClick={() => setFilter(title)}
-      className={`chip border-l center-div ${filter === title && "active"}`}
+      className={`chip border-l center-div ${
+        filter.toLowerCase() === title.toLowerCase() && "active"
+      }`}
     >
       {title}
     </div>

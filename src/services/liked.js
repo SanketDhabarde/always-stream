@@ -1,11 +1,12 @@
 import axios from "axios";
+import { getBaseUrl } from "../utils";
 
 const likedVideo = async (video, userListsDispatch) => {
   try {
     const {
       data: { likes },
     } = await axios.post(
-      "/api/user/likes",
+      `${getBaseUrl()}/api/user/likes`,
       { video },
       {
         headers: {
@@ -23,7 +24,7 @@ const dislikedVideo = async (video, userListsDispatch) => {
   try {
     const {
       data: { likes },
-    } = await axios.delete(`/api/user/likes/${video?._id}`, {
+    } = await axios.delete(`${getBaseUrl()}/api/user/likes/${video?._id}`, {
       headers: {
         authorization: localStorage.getItem("token"),
       },

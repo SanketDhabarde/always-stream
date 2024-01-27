@@ -6,6 +6,7 @@ import { useUserLists } from "../../context";
 import { useAuth } from "../../context/auth";
 import { useTitle } from "../../hooks";
 import "./Auth.css";
+import { getBaseUrl } from "../../utils";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ function Login() {
   const loginHandler = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axios.post("/api/auth/login", { email, password });
+      const { data } = await axios.post(`${getBaseUrl()}/api/auth/login`, { email, password });
       const { foundUser, encodedToken } = data;
       setUser(foundUser);
       userListsDispatch({ type: "INIT_USER_LIST", payload: foundUser });

@@ -3,11 +3,14 @@ import "./Explore.css";
 import { Chips, Sidebar, Spinner, VideoCard } from "../../components";
 import { useDebounce, useFetch, useTitle } from "../../hooks";
 import { useFilter, useSearch } from "../../context";
-import { filterVideos, searchVideos } from "../../utils";
+import { filterVideos, getBaseUrl, searchVideos } from "../../utils";
 import { CATEGORIES } from "../../consts";
 
 function Explore() {
-  const [{ data, isLoading, isError }] = useFetch("api/videos", []);
+  const [{ data, isLoading, isError }] = useFetch(
+    `${getBaseUrl()}/api/videos`,
+    []
+  );
   const { videos } = data;
   useTitle("Explore");
   const { filter } = useFilter();
@@ -36,7 +39,9 @@ function Explore() {
           ))}
           {isError && <div className="error-msg">Something went wrong😥</div>}
           {isLoading && <Spinner />}
-          {searchBy && !searchedVideos.length && <div className="error-msg">No videos present as per search😥</div>}
+          {searchBy && !searchedVideos.length && (
+            <div className="error-msg">No videos present as per search😥</div>
+          )}
         </div>
       </div>
     </div>

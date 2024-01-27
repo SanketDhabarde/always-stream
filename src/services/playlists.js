@@ -1,13 +1,14 @@
 import axios from "axios";
+import { getBaseUrl } from "../utils";
 
 const addNewPlaylist = async (newPlaylist, userListsDispatch) => {
   try {
     const {
       data: { playlists },
     } = await axios.post(
-      "/api/user/playlists",
+      `${getBaseUrl()}/api/user/playlists`,
       {
-        playlist: { title: newPlaylist.trim() },
+        title: newPlaylist.trim(),
       },
       {
         headers: {
@@ -25,7 +26,7 @@ const removePlaylist = async (playlistId, userListsDispatch) => {
   try {
     const {
       data: { playlists },
-    } = await axios.delete(`/api/user/playlists/${playlistId}`, {
+    } = await axios.delete(`${getBaseUrl()}/api/user/playlists/${playlistId}`, {
       headers: {
         authorization: localStorage.getItem("token"),
       },
@@ -41,7 +42,7 @@ const addVideoInPlaylist = async (playlistId, video, userListsDispatch) => {
     const {
       data: { playlist },
     } = await axios.post(
-      `/api/user/playlists/${playlistId}`,
+      `${getBaseUrl()}/api/user/playlists/${playlistId}`,
       { video },
       {
         headers: {
@@ -63,11 +64,14 @@ const removeVideoFromPlaylist = async (
   try {
     const {
       data: { playlist },
-    } = await axios.delete(`/api/user/playlists/${playlistId}/${videoId}`, {
-      headers: {
-        authorization: localStorage.getItem("token"),
-      },
-    });
+    } = await axios.delete(
+      `${getBaseUrl()}/api/user/playlists/${playlistId}/${videoId}`,
+      {
+        headers: {
+          authorization: localStorage.getItem("token"),
+        },
+      }
+    );
     userListsDispatch({ type: "UPDATE_PLAYLIST_VIDEOS", payload: playlist });
   } catch (e) {
     console.error(e);

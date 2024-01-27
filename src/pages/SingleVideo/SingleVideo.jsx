@@ -9,13 +9,13 @@ import {
   likedVideo,
   removeFromWatchLater,
 } from "../../services";
-import { isVideoExistsInList } from "../../utils";
+import { getBaseUrl, isVideoExistsInList } from "../../utils";
 import "./SingleVideo.css";
 
 function SingleVideo() {
   useTitle("video");
   const { videoId } = useParams();
-  const [{ data, isLoading, isError }] = useFetch(`/api/video/${videoId}`, []);
+  const [{ data, isLoading, isError }] = useFetch(`${getBaseUrl()}/api/videos/${videoId}`, []);
   const { video } = data;
   const { title, views, description, avatar, creatorName } = video ?? {};
   const { user } = useAuth();

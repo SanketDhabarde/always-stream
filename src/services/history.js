@@ -1,11 +1,12 @@
 import axios from "axios";
+import { getBaseUrl } from "../utils";
 
 const addToHistory = async (video, userListsDispatch) => {
   try {
     const {
       data: { history },
     } = await axios.post(
-      "/api/user/history",
+      `${getBaseUrl()}/api/user/history`,
       { video },
       {
         headers: {
@@ -23,7 +24,7 @@ const removeFromHistory = async (video, userListsDispatch) => {
   try {
     const {
       data: { history },
-    } = await axios.delete(`/api/user/history/${video?._id}`, {
+    } = await axios.delete(`${getBaseUrl()}/api/user/history/${video?._id}`, {
       headers: {
         authorization: localStorage.getItem("token"),
       },
@@ -38,7 +39,7 @@ const clearHistory = async (userListsDispatch) => {
   try {
     const {
       data: { history },
-    } = await axios.delete(`/api/user/history/all`, {
+    } = await axios.delete(`${getBaseUrl()}/api/user/history/all`, {
       headers: {
         authorization: localStorage.getItem("token"),
       },

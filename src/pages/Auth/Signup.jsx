@@ -6,6 +6,7 @@ import axios from "axios";
 import { useAuth } from "../../context/auth";
 import { signupFormReducer } from "../../reducers";
 import { useTitle } from "../../hooks";
+import { getBaseUrl } from "../../utils";
 
 function Signup() {
   const [state, dispatch] = useReducer(signupFormReducer, {
@@ -25,7 +26,7 @@ function Signup() {
   const signupHandler = async (event) => {
     event.preventDefault();
     try {
-      const { data } = await axios.post(`/api/auth/signup`, {
+      const { data } = await axios.post(`${getBaseUrl()}/api/auth/signup`, {
         email,
         firstName,
         lastName,

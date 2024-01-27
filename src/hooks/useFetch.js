@@ -45,7 +45,8 @@ export const useFetch = (initialUrl, initialData, isRoutePrivate = false) => {
               },
             })
           : await axios.get(url);
-        dispatch({ type: "FETCH_SUCCESS", payload: res.data });
+          console.log(res);
+        dispatch({ type: "FETCH_SUCCESS", payload: res?.data });
       } catch (e) {
         dispatch({ type: "FETCH_ERROR" });
       }

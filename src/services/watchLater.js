@@ -1,11 +1,12 @@
 import axios from "axios";
+import { getBaseUrl } from "../utils";
 
 const addToWatchLater = async (video, userListsDispatch) => {
   try {
     const {
       data: { watchlater },
     } = await axios.post(
-      "/api/user/watchlater",
+      `${getBaseUrl()}/api/user/watchlater`,
       { video },
       {
         headers: {
@@ -23,7 +24,7 @@ const removeFromWatchLater = async (video, userListsDispatch) => {
   try {
     const {
       data: { watchlater },
-    } = await axios.delete(`/api/user/watchlater/${video?._id}`, {
+    } = await axios.delete(`${getBaseUrl()}/api/user/watchlater/${video?._id}`, {
       headers: {
         authorization: localStorage.getItem("token"),
       },
